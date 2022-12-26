@@ -3,27 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center|center_horizontal|center_vertical"
     android:orientation="vertical"
-    android:background="#A6BD8A"
-    tools:context=".fragmentTwo" >
+    tools:context=".fragmentTwo">
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="WELCOME"
+        android:textColor="#C04D4D"
+        android:textSize="60sp" />
+
+    <EditText
         android:id="@+id/emailLoginFiled"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
+        android:layout_margin="5px"
+        android:ems="10"
+        android:hint="enter your email"
+        android:inputType="textEmailAddress"
+        android:textSize="24sp" />
 
-        android:hint="email..." />
 
-    <TextView
+    <EditText
         android:id="@+id/passwordLoginFiled"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password..." />
+        android:layout_height="82dp"
+        android:digits="123456789"
+        android:ems="10"
+        android:hint="enter your password"
+        android:inputType="number"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/loginToApp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="79dp"
+        android:layout_margin="33px"
+        android:backgroundTint="#CC2B2B"
         android:onClick="login"
         android:text="Login" />
 </LinearLayout>

@@ -4,38 +4,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#7C9EBA"
     tools:context=".FragmentThree">
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="REGISTER"
+        android:textColor="#C04D4D"
+        android:textSize="60sp" />
+
+    <EditText
         android:id="@+id/emailToRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="email.." />
+        android:layout_height="72dp"
+        android:layout_margin="5px"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:textSize="24sp" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/passForRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password" />
+        android:layout_height="82dp"
+        android:digits="123456789"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="number"
+        android:textSize="24sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/phoneToRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="phone..." />
+        android:layout_height="82dp"
+        android:digits="123456789"
+        android:ems="10"
+        android:hint="phone"
+        android:inputType="number"
+        android:textSize="24sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/nameToRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="name..." />
+        android:layout_height="82dp"
+        android:ems="10"
+        android:hint="name"
+        android:inputType="text"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/registerToApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="register"
-        android:textColor="@color/black"
-        android:background="#E4D126"/>
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_margin="33px"
+        android:backgroundTint="#CC2B2B"
+        android:onClick="login"
+        android:text="Register" />
+
 </LinearLayout>

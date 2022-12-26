@@ -6,11 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -40,6 +43,8 @@ public class fragmentTwo extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Boolean validMail = false;
+    private Boolean validPass = false;
 
     public fragmentTwo() {
         // Required empty public constructor
@@ -78,12 +83,71 @@ public class fragmentTwo extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_two, container, false);
         Button button23 = view.findViewById(R.id.loginToApp);
+        button23.setEnabled(false);
         button23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EditText emailValidate2 = (EditText)view.findViewById(R.id.emailLoginFiled);
                 login();
             }
         });
+
+
+        EditText emailValidate = (EditText)view.findViewById(R.id.emailLoginFiled);
+
+
+        emailValidate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                String email = emailValidate.getText().toString().trim();
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                if (!hasFocus) {
+                    if (email.matches(emailPattern))
+                    {
+                        validMail = true;
+                        if(validPass){
+                            button23.setEnabled(true);
+                        }
+                        Toast.makeText(getActivity(), "valid email address", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        button23.setEnabled(false);
+                        emailValidate.setError("Invalid email address");
+                        Toast.makeText(getActivity(), "Invalid email address", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+
+        EditText passValidate = (EditText)view.findViewById(R.id.passwordLoginFiled);
+        passValidate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                String pass = passValidate.getText().toString().trim();
+                String passPattern = "[0-9]+";
+
+                if (!hasFocus) {
+                    if (pass.matches(passPattern))
+                    {
+                        validPass = true;
+                        if(validMail){
+                            button23.setEnabled(true);
+                        }
+                        Toast.makeText(getActivity(), "valid email address", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        validPass = false;
+                        button23.setEnabled(false);
+                        passValidate.setError("Invalid email address");
+                        Toast.makeText(getActivity(), "Invalid email address", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
         return view;
     }
 

@@ -4,19 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/design_default_color_on_secondary"
     tools:context=".fragmentOne">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="ASSIGNMENT 2"
+        android:textColor="#C04D4D"
+        android:textSize="50sp" />
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="login" />
+        android:layout_height="79dp"
+        android:layout_margin="33px"
+        android:backgroundTint="#CC2B2B"
+        android:text="Login" />
 
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="register" />
+        android:layout_height="79dp"
+        android:layout_margin="33px"
+        android:backgroundTint="#CC2B2B"
+        android:text="Register" />
+
 
 </LinearLayout>
