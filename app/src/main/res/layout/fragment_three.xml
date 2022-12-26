@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#7C9EBA"
+    tools:context=".FragmentThree">
+
+    <TextView
+        android:id="@+id/emailToRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email.." />
+
+    <TextView
+        android:id="@+id/passForRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password" />
+
+    <TextView
+        android:id="@+id/phoneToRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="phone..." />
+
+    <TextView
+        android:id="@+id/nameToRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name..." />
+
+    <Button
+        android:id="@+id/registerToApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:textColor="@color/black"
+        android:background="#E4D126"/>
+</LinearLayout>

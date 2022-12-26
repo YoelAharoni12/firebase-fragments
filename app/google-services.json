@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "527066270533",
+    "project_id": "exrc2mobile",
+    "storage_bucket": "exrc2mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527066270533:android:c86b15f5c16815c36d8c2c",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527066270533-037m0ofqrj3mmgv8mi8uqsslb4a9r7i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGSalOrjr05gGsg4GLGCaY4PLryvlKhes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527066270533-037m0ofqrj3mmgv8mi8uqsslb4a9r7i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
