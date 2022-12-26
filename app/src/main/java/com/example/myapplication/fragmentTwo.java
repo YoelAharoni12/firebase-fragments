@@ -45,6 +45,9 @@ public class fragmentTwo extends Fragment {
     private String mParam2;
     private Boolean validMail = false;
     private Boolean validPass = false;
+    private EditText emailEl;
+    private EditText passwordEl;
+
 
     public fragmentTwo() {
         // Required empty public constructor
@@ -83,17 +86,19 @@ public class fragmentTwo extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_two, container, false);
         Button button23 = view.findViewById(R.id.loginToApp);
+        emailEl = view.findViewById(R.id.emailLoginFiled);
+        passwordEl = view.findViewById(R.id.passwordLoginFiled);
         button23.setEnabled(false);
         button23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText emailValidate2 = (EditText)view.findViewById(R.id.emailLoginFiled);
+                EditText emailValidate2 = (EditText) view.findViewById(R.id.emailLoginFiled);
                 login();
             }
         });
 
 
-        EditText emailValidate = (EditText)view.findViewById(R.id.emailLoginFiled);
+        EditText emailValidate = (EditText) view.findViewById(R.id.emailLoginFiled);
 
 
         emailValidate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -102,16 +107,13 @@ public class fragmentTwo extends Fragment {
                 String email = emailValidate.getText().toString().trim();
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 if (!hasFocus) {
-                    if (email.matches(emailPattern))
-                    {
+                    if (email.matches(emailPattern)) {
                         validMail = true;
-                        if(validPass){
+                        if (validPass) {
                             button23.setEnabled(true);
                         }
                         Toast.makeText(getActivity(), "valid email address", Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
+                    } else {
                         button23.setEnabled(false);
                         emailValidate.setError("Invalid email address");
                         Toast.makeText(getActivity(), "Invalid email address", Toast.LENGTH_LONG).show();
@@ -121,7 +123,7 @@ public class fragmentTwo extends Fragment {
         });
 
 
-        EditText passValidate = (EditText)view.findViewById(R.id.passwordLoginFiled);
+        EditText passValidate = (EditText) view.findViewById(R.id.passwordLoginFiled);
         passValidate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -129,16 +131,13 @@ public class fragmentTwo extends Fragment {
                 String passPattern = "[0-9]+";
 
                 if (!hasFocus) {
-                    if (pass.matches(passPattern))
-                    {
+                    if (pass.matches(passPattern)) {
                         validPass = true;
-                        if(validMail){
+                        if (validMail) {
                             button23.setEnabled(true);
                         }
                         Toast.makeText(getActivity(), "valid email address", Toast.LENGTH_LONG).show();
-                    }
-                    else
-                    {
+                    } else {
                         validPass = false;
                         button23.setEnabled(false);
                         passValidate.setError("Invalid email address");
@@ -152,8 +151,8 @@ public class fragmentTwo extends Fragment {
     }
 
     public void login() {
-        String email = requireView().findViewById(R.id.emailLoginFiled).toString();
-        String password = requireView().findViewById(R.id.passwordLoginFiled).toString();
+        String email = emailEl.getText().toString();
+        String password = passwordEl.getText().toString();
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
             @Override

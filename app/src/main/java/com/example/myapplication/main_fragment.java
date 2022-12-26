@@ -102,7 +102,10 @@ public class main_fragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 Person value = dataSnapshot.getValue(Person.class);
-                
+                if (value == null) {
+                    Toast.makeText(getActivity(), "Failed to read value.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 emailtBox.setText(value.email);
                 nameBox.setText(value.name);
                 passwordtBox.setText(value.password);
